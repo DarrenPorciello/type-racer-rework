@@ -23,6 +23,9 @@ function App() {
         </div>
         <div className='textBoxSpace'>
           <p>Just type "START" below</p>
+          <div className='typedTextHomePage'>
+          <p>START</p>
+          </div>
         </div>
       </header>
 
