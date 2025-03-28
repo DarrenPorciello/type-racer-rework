@@ -12,9 +12,9 @@ function App() {
         <p className='userNameText'> Username </p>
       </div>
 
-      <div className='signUpLogInContainer'>
-        <p className='signUpLogInButton'>Sign up</p>
-        <p className='signUpLogInButton'>Log in</p>
+      <div className='signUpSignInContainer'>
+        <p className='signUpSignInButton'>Sign up</p>
+        <p className='signUpSignInButton'>Sign in</p>
       </div>
 
       <header className="App-header">

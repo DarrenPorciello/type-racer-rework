@@ -53,7 +53,7 @@
   font-family: Inter;
 }
 
-.signUpLogInContainer {
+.signUpSignInContainer {
   display: flex;
   position: absolute;
   right: 10px;
@@ -61,7 +61,7 @@
   gap: 10px;
 }
 
-.signUpLogInButton {
+.signUpSignInButton {
   display: flex;
   justify-content: center;
   align-items: center;
