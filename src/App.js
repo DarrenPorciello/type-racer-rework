@@ -5,14 +5,22 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      
-      <div className='navBarContainer'>
+
+      <div className='ProfileContainer'>
         <img className='profileImage' src={userPNG}/>
         {/*Need to change this to reflect the users actual username when logged in*/}
         <p className='userNameText'> Username </p>
       </div>
 
+      <div className='signUpLogInContainer'>
+        <p className='signUpLogInButton'>Sign up</p>
+        <p className='signUpLogInButton'>Log in</p>
+      </div>
+
       <header className="App-header">
+        <div className='appTitle'>
+          <p>Not TypeRacer</p>
+        </div>
         <div className='textBoxSpace'>
           <p>Just type "START" below</p>
         </div>

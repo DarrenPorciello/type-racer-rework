@@ -24,7 +24,17 @@
   color: white;
 }
 
-.navBarContainer {
+.appTitle {
+  margin-top: 50px;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ProfileContainer {
   display: flex;
   position: absolute;
   top: 10px;
@@ -43,12 +53,33 @@
   font-family: Inter;
 }
 
+.signUpLogInContainer {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  gap: 10px;
+}
+
+.signUpLogInButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  color: black;
+  background-color: #D9D9D9;
+  font-family: Inter;
+  font-size: 16px;
+}
+
 .textBoxSpace {
   width: 600px;
   height: 350px;
   flex-shrink: 0;
   display: flex;
-  margin-top: 160px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
