@@ -63,7 +63,7 @@ function Instruction() {
                     <p>Not TypeRacer</p>
                 </div>
                 <div className='textBoxSpace'>
-                    <p>Type the words into the text box, including all spaces, punctuation, and proper capitalization. If you make a mistake, you will have to correct it before you’re allowed to proceed.</p>
+                    <p>Type the words into the text box, including all spaces, punctuation, and proper capitalization. If you make a mistake, you will have to correct it before you can finish the race.</p>
                     <div className='typedTextHomePage'>
                         <div className={`inputContainer ${isFocused ? 'focused' : ''}`}>
                             <input

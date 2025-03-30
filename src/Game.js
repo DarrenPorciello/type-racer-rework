@@ -16,7 +16,7 @@ function Game() {
   const inputRef = useRef(null);
   const navigate = useNavigate();
   // The target text that users need to type
-  const targetText = "Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet";
+  const targetText = "The cat sat on the mat. She enjoys reading books in the park. He went to the store to buy groceries. The sun is shining brightly today. We are going on vacation next week.";
 
   // Timer effect
   useEffect(() => {
