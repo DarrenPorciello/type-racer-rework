@@ -1,4 +1,8 @@
 import userPNG from './User.png'
+import homePNG from './Home.png'
+import retryPNG from './Refresh cw.png'
+import blackStarPNG from './Star 1.png'
+import redStarPNG from './Star 2.png'
 import './App.css';
 
 function App() {
@@ -12,21 +16,21 @@ function App() {
       </div>
 
       <div className='homeContainer'>
-        <img className='homeImage' src={userPNG}/>
+        <img className='homeImage' src={homePNG}/>
         {/*Need to change this to reflect the users actual username when logged in*/}
         <p className='userNameText'> Home </p>
       </div>
 
       <div className='retryContainer'>
-        <img className='retryImage' src={userPNG}/>
+        <img className='retryImage' src={retryPNG}/>
         {/*Need to change this to reflect the users actual username when logged in*/}
         <p className='userNameText'> Retry </p>
       </div>
 
       <div className='legend'>
-        <img className='legendImage' src={userPNG}/>
+        <img className='legendImage' src={blackStarPNG}/>
         <p>User</p>
-        <img className='legendImage' src={userPNG}/>
+        <img className='legendImage' src={redStarPNG}/>
         <p>CPU</p>
       </div>
 
