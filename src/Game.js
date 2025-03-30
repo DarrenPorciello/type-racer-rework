@@ -4,30 +4,57 @@ import retryPNG from './Refresh cw.png'
 import blackStarPNG from './Star 1.png'
 import redStarPNG from './Star 2.png'
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Game() {
   const [inputText, setInputText] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+  const [startTime, setStartTime] = useState(null);
+  const [errors, setErrors] = useState(0);
   const inputRef = useRef(null);
   const navigate = useNavigate();
   // The target text that users need to type
-  const targetText = "Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet ";
+  const targetText = "Aliquam malesuada euismod urna at tincidunt. Donec sit amet laoreet";
 
   const handleContainerClick = () => {
     inputRef.current?.focus();
+  };
+
+  const calculateStats = () => {
+    const timeElapsed = (Date.now() - startTime) / 1000; // Convert to seconds
+    const wordsTyped = inputText.split(' ').length;
+    const minutes = timeElapsed / 60;
+    const wpm = Math.round(wordsTyped / minutes);
+    const accuracy = Math.round(((inputText.length - errors) / inputText.length) * 100);
+
+    return {
+      time: Math.round(timeElapsed),
+      wpm,
+      accuracy,
+      errors
+    };
   };
 
   const handleInputChange = (e) => {
     const text = e.target.value;
     setInputText(text);
     
-    // If user completes the entire text, redirect after delay
+    // Start timing when user starts typing
+    if (!startTime) {
+      setStartTime(Date.now());
+    }
+    
+    // Count errors
+    const newErrors = text.split('').reduce((acc, char, i) => {
+      return acc + (char !== targetText[i] ? 1 : 0);
+    }, 0);
+    setErrors(newErrors);
+    
+    // If user completes the entire text, redirect to end page
     if (text === targetText) {
-      setTimeout(() => {
-        navigate('/start');
-      }, 500);
+      const stats = calculateStats();
+      navigate('/end', { state: { stats } });
     }
   };
 
