@@ -39,8 +39,22 @@ function App() {
           <p>Not TypeRacer</p>
         </div>
         <div className='textBoxSpace'>
-          <div className='typedTextHomePage'>
-          <p>string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings</p>
+          <div className='statsContainer'>
+            <img className='statsImage' src={blackStarPNG}/>
+            <p>You</p>
+            <img className='statsImage' src={redStarPNG}/>
+            <p>CPU</p>
+          </div>
+          <div className='statsContainer'>
+            <p>WPM: 70 words/min</p>
+            <p>WPM: 65 words/min</p>
+          </div>
+          <div className='statsContainer'>
+            <p>Time: 66 seconds</p>
+            <p>Time: 70 seconds</p>
+          </div>
+          <div className='statsContainer'>
+            <p>You won!</p>
           </div>
         </div>
       </header>
