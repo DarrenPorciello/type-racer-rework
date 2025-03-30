@@ -11,9 +11,23 @@ function App() {
         <p className='userNameText'> Username </p>
       </div>
 
-      <div className='signUpSignInContainer'>
-        <p className='signUpSignInButton'>Sign up</p>
-        <p className='signUpSignInButton'>Sign in</p>
+      <div className='homeContainer'>
+        <img className='homeImage' src={userPNG}/>
+        {/*Need to change this to reflect the users actual username when logged in*/}
+        <p className='userNameText'> Home </p>
+      </div>
+
+      <div className='retryContainer'>
+        <img className='retryImage' src={userPNG}/>
+        {/*Need to change this to reflect the users actual username when logged in*/}
+        <p className='userNameText'> Retry </p>
+      </div>
+
+      <div className='legend'>
+        <img className='legendImage' src={userPNG}/>
+        <p>User</p>
+        <img className='legendImage' src={userPNG}/>
+        <p>CPU</p>
       </div>
 
       <header className="App-header">
@@ -21,9 +35,8 @@ function App() {
           <p>Not TypeRacer</p>
         </div>
         <div className='textBoxSpace'>
-          <p>Just type "START" below</p>
           <div className='typedTextHomePage'>
-          <p>START</p>
+          <p>string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings string strings</p>
           </div>
         </div>
       </header>

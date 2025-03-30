@@ -47,6 +47,32 @@
   height: 40px;
 }
 
+.homeContainer {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  gap: 10px;
+}
+
+.homeImage {
+  width: 40px;
+  height: 40px;
+}
+
+.retryContainer {
+  display: flex;
+  position: absolute;
+  top: 110px;
+  left: 10px;
+  gap: 10px;
+}
+
+.retryImage {
+  width: 40px;
+  height: 40px;
+}
+
 .userNameText {
   font-size: 16px;
   color: #F0F0F0;
@@ -72,6 +98,20 @@
   background-color: #D9D9D9;
   font-family: Inter;
   font-size: 16px;
+}
+
+.legend {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  gap: 10px;
+  color: #F0F0F0;
+}
+
+.legendImage {
+  width: 40px;
+  height: 40px;
 }
 
 .textBoxSpace {
