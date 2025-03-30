@@ -372,3 +372,24 @@
   color: #4CAF50;
   font-weight: 600;
 }
+
+/* Timer styles */
+.timer {
+  color: #F0F0F0;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.timer-icon {
+  width: 20px;
+  height: 20px;
+}
