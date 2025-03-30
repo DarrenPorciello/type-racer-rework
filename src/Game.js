@@ -100,12 +100,12 @@ function Game() {
         <p>CPU</p>
       </div>
 
-      <header className="App-header">
+      <header className="App-header game">
         <div className='appTitle'>
           <p>Not TypeRacer</p>
         </div>
-        <div className='textBoxSpace'>
-          <div className='typedTextHomePage'>
+        <div className='textBoxSpace game'>
+          <div className='typedTextHomePage game'>
             <div 
               className={`game-input-container ${isFocused ? 'focused' : ''}`}
               onClick={handleContainerClick}

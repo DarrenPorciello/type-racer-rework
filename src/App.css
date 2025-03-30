@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  min-height: 100vh;
-  position: relative;
 }
 
 .App-logo {
@@ -15,13 +13,14 @@
   }
 }
 
+/* Common styles */
 .App-header {
   background-color: #4A4A4A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -45,32 +44,6 @@
 }
 
 .profileImage {
-  width: 40px;
-  height: 40px;
-}
-
-.homeContainer {
-  display: flex;
-  position: absolute;
-  top: 60px;
-  left: 10px;
-  gap: 10px;
-}
-
-.homeImage {
-  width: 40px;
-  height: 40px;
-}
-
-.retryContainer {
-  display: flex;
-  position: absolute;
-  top: 110px;
-  left: 10px;
-  gap: 10px;
-}
-
-.retryImage {
   width: 40px;
   height: 40px;
 }
@@ -102,29 +75,24 @@
   font-size: 16px;
 }
 
-.legend {
-  display: flex;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  gap: 10px;
-  color: #F0F0F0;
-}
-
-.legendImage {
-  width: 40px;
-  height: 40px;
-}
-
+/* Pre-game page styles (from river-start) */
 .textBoxSpace {
-  background: #FFFFFF;
-  border-radius: 20px;
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  display: block;
-  height: fit-content;
-  overflow: visible;
+  width: 600px;
+  height: 350px;
+  flex-shrink: 0;
+  display: flex;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: inline-block;
+  color: black;
+  background-color: #F0F0F0;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .typedTextHomePage {
@@ -134,13 +102,11 @@
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
-  margin-top: 20px;
-  display: block;
-  height: fit-content;
+  line-height: 1.5;
+  margin-top: 17%;
+  white-space: pre-wrap;
 }
 
-/* Styles for the START text input */
 .inputContainer {
   position: relative;
   display: inline-block;
@@ -161,7 +127,6 @@
   width: 100%;
   position: relative;
   z-index: 2;
-  letter-spacing: 0.5em;
   padding: 0 0.5em;
 }
 
@@ -177,22 +142,77 @@
   right: 0;
   z-index: 1;
   pointer-events: none;
+  white-space: pre-wrap;
 }
 
 .placeholderLetter {
-  display: inline-block;
-  width: 1em;
-  margin-right: 0.5em;
+  display: inline;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: bottom;
+  min-height: 1.5em;
 }
 
-/* Styles for the game text input */
+.placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.inputContainer.focused .placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.placeholderLetter.matched {
+  color: #4CAF50;
+}
+
+.placeholderLetter.wrong {
+  color: #FF5252;
+  border-bottom: 2px solid #FF5252;
+}
+
+.placeholderLetter.next {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Game page styles (from gamepage) */
+.App-header.game {
+  justify-content: flex-start;
+}
+
+.textBoxSpace.game {
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  height: fit-content;
+  overflow: visible;
+}
+
+.typedTextHomePage.game {
+  color: rgba(0, 0, 0, 0.10);
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-top: 20px;
+  display: block;
+  height: fit-content;
+  white-space: pre-wrap;
+}
+
 .game-input-container {
   position: relative;
   display: block;
-  width: 100%;
+  min-width: 80%;
   text-align: left;
+  max-width: 95%;
+  height: fit-content;
 }
 
 .game-input {
@@ -216,38 +236,90 @@
 }
 
 .game-placeholder-text {
-  position: absolute;
+  position: relative;
   text-align: left;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1;
   pointer-events: none;
+  white-space: pre-wrap;
 }
 
 .word {
   display: inline-block;
-  margin-right: 0.25em;
+  white-space: nowrap;
 }
 
-.placeholderLetter.untyped {
-  color: rgba(0, 0, 0, 0.15);
+/* Game specific letter styles */
+.placeholderLetter.space {
+  display: inline;
+  border-bottom: 2px solid transparent;
+  width: 0.8em;
+  margin: 0;
+  padding-bottom: 2px;
+  line-height: 1.5;
+  vertical-align: bottom;
+  min-height: 1.5em;
 }
 
-.inputContainer.focused .placeholderLetter.untyped {
-  color: rgba(0, 0, 0, 0.35);
-}
-
-.placeholderLetter.matched {
-  color: #4CAF50;
-}
-
-.placeholderLetter.wrong {
-  color: #FF5252;
-}
-
-.placeholderLetter.next {
+.placeholderLetter.space.next {
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.placeholderLetter.space.correctSpace {
+  color: transparent;
+}
+
+.placeholderLetter.space.wrongSpace {
+  color: #FF5252;
+  background-color: rgba(255, 0, 0, 0.3);
+  border-bottom: 2px solid #FF5252;
+}
+
+/* Remove the pseudo-element styles since we're using border-bottom now */
+.placeholderLetter.space.next::before,
+.placeholderLetter.space.wrongSpace::before {
+  display: none;
+}
+
+/* Game page specific elements */
+.homeContainer {
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  gap: 10px;
+}
+
+.homeImage {
+  width: 40px;
+  height: 40px;
+}
+
+.retryContainer {
+  display: flex;
+  position: absolute;
+  top: 110px;
+  left: 10px;
+  gap: 10px;
+}
+
+.retryImage {
+  width: 40px;
+  height: 40px;
+}
+
+.legend {
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  gap: 10px;
+  color: #F0F0F0;
+}
+
+.legendImage {
+  width: 40px;
+  height: 40px;
 }
 
 .App-link {
@@ -261,74 +333,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-/* Remove any existing underline styles that might interfere */
-.placeholderLetter::before {
-  content: none;
-}
-
-/* Style for the next character to type */
-.placeholderLetter.next::before {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 2px;
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Add red underline for wrong characters */
-.placeholderLetter.wrong::after {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 2px;
-  background-color: #FF5252;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Include spaces in the wrong character styling */
-.placeholderLetter.space.wrongSpace::after {
-  content: '';
-  position: absolute;
-  width: 15px;
-  height: 2px;
-  background-color: #FF5252;
-  bottom: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.placeholderLetter.space {
-  width: 0.5em;
-}
-
-.placeholderLetter.space.next::before {
-  width: 15px;
-}
-
-.inputContainer.focused .placeholderLetter.untyped {
-  color: rgba(0, 0, 0, 0.35);
-}
-
-.placeholderLetter.matched {
-  color: #4CAF50;
-}
-
-.placeholderLetter.wrong {
-  color: #FF5252;
-}
-
-.placeholderLetter.space.correctSpace {
-  color: transparent;
-}
-
-.placeholderLetter.space.wrongSpace {
-  color: #FF5252;
-  background-color: rgba(255, 0, 0, 0.3);
 }
