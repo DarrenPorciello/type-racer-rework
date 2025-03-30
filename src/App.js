@@ -1,7 +1,49 @@
 import userPNG from './User.png'
 import './App.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const [inputText, setInputText] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+  const navigate = useNavigate();
+  const targetWord = 'START';
+
+  const handleInputChange = (e) => {
+    const text = e.target.value.toUpperCase();
+    if (text.length <= targetWord.length) {
+      setInputText(text);
+      if (text.toLowerCase() === 'start') {
+        setTimeout(() => {
+          navigate('/start');
+        }, 500);
+      }
+    }
+  };
+
+  const renderPlaceholderLetters = () => {
+    return targetWord.split('').map((letter, index) => {
+      const isTyped = index < inputText.length;
+      const isNext = index === inputText.length;
+      const isCorrect = isTyped && inputText[index].toUpperCase() === letter;
+      const isWrong = isTyped && inputText[index].toUpperCase() !== letter;
+      
+      const classes = [
+        'placeholderLetter',
+        isCorrect ? 'matched' : '',
+        isWrong ? 'wrong' : '',
+        isNext ? 'next' : '',
+        (!isCorrect && !isWrong) ? 'untyped' : '',
+      ].filter(Boolean).join(' ');
+      
+      return (
+        <span key={index} className={classes}>
+          {letter}
+        </span>
+      );
+    });
+  };
+
   return (
     <div className="App">
 
@@ -23,7 +65,21 @@ function App() {
         <div className='textBoxSpace'>
           <p>Just type "START" below</p>
           <div className='typedTextHomePage'>
-          <p>START</p>
+            <div className={`inputContainer ${isFocused ? 'focused' : ''}`}>
+              <input
+                type="text"
+                value={inputText}
+                onChange={handleInputChange}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+                className='startInput'
+                autoFocus
+                maxLength={5}
+              />
+              <div className="placeholderText">
+                {renderPlaceholderLetters()}
+              </div>
+            </div>
           </div>
         </div>
       </header>

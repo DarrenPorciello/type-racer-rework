@@ -94,6 +94,7 @@
 }
 
 .typedTextHomePage {
+  position: relative;
   color: rgba(0, 0, 0, 0.10);
   font-family: Inter;
   font-size: 25px;
@@ -101,6 +102,72 @@
   font-weight: 400;
   line-height: normal;
   margin-top: 17%;
+}
+
+.inputContainer {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+  text-align: center;
+}
+
+.startInput {
+  background: transparent;
+  border: none;
+  color: transparent;
+  caret-color: transparent;
+  font-family: Inter;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5em;
+  padding: 0 0.5em;
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.placeholderText {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.placeholderLetter {
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.5em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.inputContainer.focused .placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.placeholderLetter.matched {
+  color: #4CAF50;
+}
+
+.placeholderLetter.wrong {
+  color: #FF5252;
+}
+
+.placeholderLetter.next {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .App-link {
