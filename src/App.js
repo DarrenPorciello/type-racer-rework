@@ -78,29 +78,25 @@ function App() {
 
   return (
     <div className="App">
-
       <div className='ProfileContainer'>
-        <img className='profileImage' src={userPNG}/>
-        {/*Need to change this to reflect the users actual username when logged in*/}
+        <img className='profileImage' src={userPNG} alt="User profile" />
         <p className='userNameText'> Username </p>
       </div>
 
       <div className='homeContainer'>
-        <img className='homeImage' src={homePNG}/>
-        {/*Need to change this to reflect the users actual username when logged in*/}
+        <img className='homeImage' src={homePNG} alt="Home" />
         <p className='userNameText'> Home </p>
       </div>
 
       <div className='retryContainer'>
-        <img className='retryImage' src={retryPNG}/>
-        {/*Need to change this to reflect the users actual username when logged in*/}
+        <img className='retryImage' src={retryPNG} alt="Retry" />
         <p className='userNameText'> Retry </p>
       </div>
 
       <div className='legend'>
-        <img className='legendImage' src={blackStarPNG}/>
+        <img className='legendImage' src={blackStarPNG} alt="User legend" />
         <p>User</p>
-        <img className='legendImage' src={redStarPNG}/>
+        <img className='legendImage' src={redStarPNG} alt="CPU legend" />
         <p>CPU</p>
       </div>
 
@@ -131,7 +127,6 @@ function App() {
           </div>
         </div>
       </header>
-
     </div>
   );
 }
