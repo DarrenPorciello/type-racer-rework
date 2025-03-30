@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  position: relative;
 }
 
 .App-logo {
@@ -19,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -115,22 +117,14 @@
 }
 
 .textBoxSpace {
-  width: 600px;
-  height: 350px;
-  flex-shrink: 0;
-  display: flex;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: inline-block;
-  color: black;
-  background-color: #F0F0F0;
-  font-family: Inter;
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  background: #FFFFFF;
+  border-radius: 20px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: block;
+  height: fit-content;
+  overflow: visible;
 }
 
 .typedTextHomePage {
@@ -140,7 +134,9 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 17%;
+  margin-top: 20px;
+  display: block;
+  height: fit-content;
 }
 
 .App-link {
@@ -154,4 +150,124 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.inputContainer {
+  position: relative;
+  display: block;
+  min-width: 80%;
+  text-align: left;
+  max-width: 95%;
+  height: fit-content;
+}
+
+.startInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  caret-color: transparent;
+  font-family: Inter;
+  font-size: 25px;
+  z-index: 2;
+}
+
+.startInput:focus {
+  outline: none;
+}
+
+.placeholderText {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  white-space: pre-wrap;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.placeholderLetter {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.15);
+  font-family: Inter;
+  font-size: 25px;
+  position: relative;
+}
+
+/* Remove any existing underline styles that might interfere */
+.placeholderLetter::before {
+  content: none;
+}
+
+/* Style for the next character to type */
+.placeholderLetter.next::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Add red underline for wrong characters */
+.placeholderLetter.wrong::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #FF5252;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Include spaces in the wrong character styling */
+.placeholderLetter.space.wrongSpace::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background-color: #FF5252;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.placeholderLetter.space {
+  width: 0.5em;
+}
+
+.placeholderLetter.space.next::before {
+  width: 15px;
+}
+
+.inputContainer.focused .placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.placeholderLetter.matched {
+  color: #4CAF50;
+}
+
+.placeholderLetter.wrong {
+  color: #FF5252;
+}
+
+.placeholderLetter.space.correctSpace {
+  color: transparent;
+}
+
+.placeholderLetter.space.wrongSpace {
+  color: #FF5252;
+  background-color: rgba(255, 0, 0, 0.3);
 }
