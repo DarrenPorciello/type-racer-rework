@@ -140,6 +140,7 @@
   height: fit-content;
 }
 
+/* Styles for the START text input */
 .inputContainer {
   position: relative;
   display: inline-block;
@@ -186,6 +187,49 @@
   border-bottom: 2px solid transparent;
 }
 
+/* Styles for the game text input */
+.game-input-container {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.game-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  color: transparent;
+  caret-color: transparent;
+  font-family: Inter;
+  font-size: 25px;
+  z-index: 2;
+  text-align: left;
+}
+
+.game-input:focus {
+  outline: none;
+}
+
+.game-placeholder-text {
+  position: absolute;
+  text-align: left;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+
 .placeholderLetter.untyped {
   color: rgba(0, 0, 0, 0.15);
 }
@@ -217,56 +261,6 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.inputContainer {
-  position: relative;
-  display: block;
-  min-width: 80%;
-  text-align: left;
-  max-width: 95%;
-  height: fit-content;
-}
-
-.startInput {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  color: transparent;
-  caret-color: transparent;
-  font-family: Inter;
-  font-size: 25px;
-  z-index: 2;
-}
-
-.startInput:focus {
-  outline: none;
-}
-
-.placeholderText {
-  position: relative;
-  text-align: left;
-  width: 100%;
-  z-index: 1;
-  pointer-events: none;
-  white-space: pre-wrap;
-}
-
-.word {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.placeholderLetter {
-  display: inline-block;
-  color: rgba(0, 0, 0, 0.15);
-  font-family: Inter;
-  font-size: 25px;
-  position: relative;
 }
 
 /* Remove any existing underline styles that might interfere */

@@ -5,7 +5,8 @@ import App from './App';
 import Start from './Start';
 import Start2 from './Start2';
 import Instruction from './Instruction';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Game from './Game';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +18,8 @@ root.render(
         <Route path="/start" element={<Start />} />
         <Route path="/start-2" element={<Start2 />} />
         <Route path="/instruction" element={<Instruction />} />
-        <Route path="/game" element={<div>GAME STARTED</div>} />
+        <Route path="/game" element={<Game />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
