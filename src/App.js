@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function App() {
   const [inputText, setInputText] = useState('');
   const [isFocused, setIsFocused] = useState(false);
@@ -52,8 +53,8 @@ function App() {
       </div>
 
       <div className='signUpSignInContainer'>
-        <p className='signUpSignInButton'>Sign up</p>
-        <p className='signUpSignInButton'>Sign in</p>
+        <p className='signUpSignInButton' onClick={() => navigate('/signup')}>Sign up</p>
+        <p className='signUpSignInButton'onClick={() => navigate('/signin')}>Sign in</p>
       </div>
 
       <header className="App-header">

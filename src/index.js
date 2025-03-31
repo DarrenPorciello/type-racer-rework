@@ -9,6 +9,9 @@ import Game from './Game';
 import EndPage from './EndPage';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import SignUp from './SignUp'; // at the top
+import SignIn from './SignIn';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +19,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/start" element={<Start />} />
         <Route path="/start-2" element={<Start2 />} />
         <Route path="/instruction" element={<Instruction />} />

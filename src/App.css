@@ -393,3 +393,199 @@
   width: 20px;
   height: 20px;
 }
+
+/* --- SignUp Page Styles --- */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+  padding: 20px;
+}
+
+.signup-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  width: 100%;
+  max-width: 420px;
+  color: #111;
+  font-family: Inter;
+}
+
+.signup-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #e60000;
+}
+
+.signup-card p {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.signup-card input[type="text"],
+.signup-card input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.signup-card input[type="text"]:focus,
+.signup-card input[type="password"]:focus {
+  border-color: #e60000;
+  outline: none;
+}
+
+.domain-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.domain-buttons button {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: 1px solid #e60000;
+  background-color: #fff;
+  color: #e60000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+}
+
+.domain-buttons button.active,
+.domain-buttons button:hover {
+  background-color: #e60000;
+  color: #fff;
+}
+
+.signup-btn {
+  width: 100%;
+  background-color: #e60000;
+  color: #fff;
+  padding: 0.75rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #c50000;
+}
+
+.signup-btn:disabled,
+.disabled-btn {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.remember-me {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #555;
+}
+
+.quick-access {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.quick-access button {
+  flex: 1;
+  margin: 0 0.25rem;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  color: #111;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.quick-access button:hover {
+  background-color: #e6e6e6;
+}
+
+.signin-link {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.signin-link a {
+  color: #e60000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+.quick-access {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.quick-access button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.auth-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.auth-icon:hover {
+  transform: scale(1.05);
+}
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.back-btn-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  color: #d32f2f;
+  font-size: 1rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.back-btn-top:hover {
+  color: #b71c1c;
+}
