@@ -590,3 +590,12 @@
 .back-btn-top:hover {
   color: #b71c1c;
 }
+
+/* Add specific styling for game placeholder letters */
+.game-placeholder-text .placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.game-input-container.focused .placeholderLetter.untyped {
+  color: rgba(0, 0, 0, 0.5);
+}
