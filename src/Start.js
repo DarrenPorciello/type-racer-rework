@@ -3,20 +3,19 @@ import './App.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-function App() {
+function Start() {
   const [inputText, setInputText] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const navigate = useNavigate();
-  const targetWord = 'START';
+  const targetWord = 'ENGLISH';
 
   const handleInputChange = (e) => {
     const text = e.target.value.toUpperCase();
     if (text.length <= targetWord.length) {
       setInputText(text);
-      if (text.toLowerCase() === 'start') {
+      if (text.toLowerCase() === 'english') {
         setTimeout(() => {
-          navigate('/start');
+          navigate('/start-2');
         }, 500);
       }
     }
@@ -47,14 +46,16 @@ function App() {
 
   return (
     <div className="App">
+
       <div className='ProfileContainer'>
-        <img className='profileImage' src={userPNG} alt="User profile" />
+        <img className='profileImage' src={userPNG} />
+        {/*Need to change this to reflect the users actual username when logged in*/}
         <p className='userNameText'> Username </p>
       </div>
 
       <div className='signUpSignInContainer'>
-        <p className='signUpSignInButton' onClick={() => navigate('/signup')}>Sign up</p>
-        <p className='signUpSignInButton'onClick={() => navigate('/signin')}>Sign in</p>
+        <p className='signUpSignInButton'>Sign up</p>
+        <p className='signUpSignInButton'>Sign in</p>
       </div>
 
       <header className="App-header">
@@ -62,7 +63,7 @@ function App() {
           <p>Not TypeRacer</p>
         </div>
         <div className='textBoxSpace'>
-          <p>Just type "START" below</p>
+          <p>Type your language below</p>
           <div className='typedTextHomePage'>
             <div className={`inputContainer ${isFocused ? 'focused' : ''}`}>
               <input
@@ -73,17 +74,19 @@ function App() {
                 onBlur={() => setIsFocused(false)}
                 className='startInput'
                 autoFocus
-                maxLength={5}
+                maxLength={7}
               />
               <div className="placeholderText">
                 {renderPlaceholderLetters()}
+                <p>French</p>
               </div>
             </div>
           </div>
         </div>
       </header>
+
     </div>
   );
 }
 
-export default App;
+export default Start;
